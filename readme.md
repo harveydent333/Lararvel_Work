@@ -16,7 +16,7 @@
 А после устанавливаем sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
    Запуск проекта.
-1. В дерикторию скачиваем проект командой git clone https://github.com/harveydent333/LaravelWork
+1. В дерикторию скачиваем проект командой git clone https://github.com/harveydent333/Lararvel_Work.git
 Подключаем laravel командой  composer require laravel/homestead --dev
 2. В открываем файл .env.example и устанавливаем параметры:
 
