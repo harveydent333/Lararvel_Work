@@ -8,11 +8,11 @@ use Mail;
 use App\User;
 use App\File;
 use App\Client;
-use App\test;
+use App\Test;
 use App\Http\Requests\UploadFiles;
 use App\Http\Requests\createTaskRequest;
 
-class mainController extends Controller
+class MainController extends Controller
 {
   public function admin(){
 
@@ -48,7 +48,6 @@ class mainController extends Controller
 
   public function index(){
    return redirect('http://localhost:4200');
-  //  return view('welcome');
   }
 
    public function storeFile (UploadFiles $request)
@@ -98,20 +97,6 @@ class mainController extends Controller
            На указанный Вами электронный адрес отправлено письмо с ссылкой на Файл!']);
    }
 
-     // public function storeFile (UploadFiles $request)
-     // {
-     //   $has_file = md5(time());
-     //   File::create([
-     //            'name' => $request->file_name,
-     //            'has_file'=>$has_file,
-     //              'size' => $request->file_size,
-     //             'description'=>$request->description,
-     //            'id_client'=>1,
-     //           ]);
-     // return redirect()->back()->with(['message'=>'Ваш Файл Успешно загружен.
-     //          На указанный Вами электронный адрес отправлено письмо с ссылкой на Файл!']);
-     //   }
-
 
     public function upload($has_user,$has_file){
       $file = File::where('has_file',$has_file)->first();
@@ -119,7 +104,7 @@ class mainController extends Controller
       return view('upload',['file'=>$file],['user'=>$user]);
     }
     public function tests(Request $request){
-       test::create([
+       Test::create([
           'name'=>$request->email,
           'age'=>$request->description,
        ]);

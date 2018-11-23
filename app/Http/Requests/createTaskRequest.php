@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
-class createTaskRequest extends FormRequest
+class CreateTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,8 +27,8 @@ class createTaskRequest extends FormRequest
         return [
             'email'=>'required|string|email|max:255',
             'name' => 'required|string|max:255',
-         'password' => 'required|string|min:8',
-         'password_confirmation' => 'required|same:password',
+            'password' => 'required|string|min:8',
+            'password_confirmation' => 'required|same:password',
         ];
     }
 }
