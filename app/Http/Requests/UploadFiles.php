@@ -24,10 +24,10 @@ class UploadFiles extends FormRequest
     public function rules()
     {
         return [
-          //    'file'=>'between:100000,150000',
-        //  'file'=>'max:100',
-              //  'file'=>'between:1,150000',
-                  'email'=>'required|string|email|max:255',
+          s
+          //'file'=>'between:100000,150000',
+          //'file'=>'between:1,150000',
+          'email'=>'required|string|email|max:255',
         ];
     }
 }
