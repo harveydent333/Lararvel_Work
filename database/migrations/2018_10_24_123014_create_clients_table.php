@@ -20,8 +20,8 @@ class CreateClientsTable extends Migration
             $table->timestamps();
         });
         Schema::table('files', function($table) {
-      $table->foreign('id_client')->references('id_client')->on('clients');
-  });
+          $table->foreign('id_client')->references('id_client')->on('clients');
+       });
     }
 
     /**
