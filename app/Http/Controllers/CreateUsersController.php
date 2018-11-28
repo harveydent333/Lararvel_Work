@@ -21,19 +21,20 @@ class CreateUsersController extends Controller
   {
     $data = $request->all();
     User::create([
-        'name' => ($request->name),
-        'email' => ($request->email),
-        'password' => Hash::make($request->password),
-        'remember_token'=>Hash::make($request->password),
+      'name' => ($request->name),
+      'email' => ($request->email),
+      'password' => Hash::make($request->password),
+      'remember_token'=>Hash::make($request->password),
     ]);
     $email = $request->email;
     Mail::send('mail_user',['data'=>$request], function($message) use($email)
     {
-       $message->from('testlaravel3334@gmail.com', 'Laravel');
-       $message->to($email)->subject('Registation');
+      $message->from('testlaravel3334@gmail.com', 'Laravel');
+      $message->to($email)->subject('Registation');
     });
     return redirect('admin')->with(['message'=>'Пользователь создан!']);
   }
+
   public function showUser($id)
   {
     $myData = User::find($id);
@@ -45,6 +46,7 @@ class CreateUsersController extends Controller
     $myData = User::find($id);
     return view('user_edit',['myData'=>$myData]);
   }
+
   public function deleteUser($id)
   {
     User::find($id)->delete();
@@ -55,37 +57,35 @@ class CreateUsersController extends Controller
   {
     $myData = User::find($id);
     $myData->fill([
-     'name' => ($request->name),
-     'email' => ($request->email),
-     'password' => Hash::make($request->password),
-     'remember_token'=>Hash::make($request->password),
+      'name' => ($request->name),
+      'email' => ($request->email),
+      'password' => Hash::make($request->password),
+      'remember_token'=>Hash::make($request->password),
     ]);
-  $myData->save();
-  return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
+    $myData->save();
+    return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
   }
 
   public function updateProfil(CreateTaskRequest $request, $id)
   {
-      $myData = User::find($id);
-      $email_request = $request;
-      $email = User::all();
-
-       if($email_request->email == $myData->email){
-         $myData->fill([
-           'name' => ($request->name),
-           'password' => $request->password,
-           'remember_token'=>$request->password,
-           'id_roles'=>($request->id_roles),
-         ]);
-       $myData->save();
+    $myData = User::find($id);
+    $email_request = $request;
+    $email = User::all();
+    if($email_request->email == $myData->email){
+      $myData->fill([
+        'name' => ($request->name),
+        'password' => $request->password,
+        'remember_token'=>$request->password,
+        'id_roles'=>($request->id_roles),
+      ]);
+      $myData->save();
       return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
-       }
-       else {
-         foreach ($email as $mail) {
-         if(($mail->email && $mail->id) != ($email_request->email && $email_request->id)){
-           return redirect()->back()->with(['message'=>'Данный email уже используется!']);
+      else{
+        foreach ($email as $mail) {
+          if(($mail->email && $mail->id) != ($email_request->email && $email_request->id)){
+            return redirect()->back()->with(['message'=>'Данный email уже используется!']);
           }
-          else {
+          else{
             $myData->fill([
               'name' => ($request->name),
               'email' => ($request->email),
@@ -99,4 +99,5 @@ class CreateUsersController extends Controller
         }
       }
     }
+  }
 }
