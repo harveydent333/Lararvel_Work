@@ -24,7 +24,6 @@ class UploadFiles extends FormRequest
     public function rules()
     {
         return [
-          s
           //'file'=>'between:100000,150000',
           //'file'=>'between:1,150000',
           'email'=>'required|string|email|max:255',
