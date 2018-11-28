@@ -81,21 +81,21 @@
                        <div class="row">
                          <div class="col-md-10 col-md-offset-1">
                            <div class="alert alert-danger">
-                       <ul>
-                         @foreach($errors->all() as $error)
-                           <li>{{$error}} </li>
-                         @endforeach
-                       </ul>
-               </div>
-             </div>
-           </div>
-         </div>
-           @endif
+                             <ul>
+                               @foreach($errors->all() as $error)
+                                <li>{{$error}} </li>
+                               @endforeach
+                             </ul>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+      @endif
 
       @if (session('message'))
-      <div class="alert alert-success">
-        {{session('message')}}
-      </div>
+        <div class="alert alert-success">
+          {{session('message')}}
+        </div>
       @endif
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -107,44 +107,46 @@
                     @endauth
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
-
-        <form action="{{route('storeFile')}}" method="post" enctype="multipart/form-data">
-          {{ csrf_field()}}
-  <table border="0">
-    <tr>
-            <td colspan="2">Форма для загрузки Вашего файла<td>
-    </tr>
-  </tr>
-      <tr><td><br></td></tr>
-  <tr>
-      <tr>
-          <td>E-Mail</td>
-          <td><input type="text" class="" name="email" value="{{old('email')}}"><br></td>
-      </tr>
-          <tr><td><br></td></tr>
-      <tr>
-            <td>Description</td>
-            <td><textarea name="description">{{old('description')}}</textarea><br></td>
-      </tr>
-            <tr><td><br></td></tr>
-      <tr>
-              <td></td>
-              <td><input type="file" name="file"></td>
-      </tr>
-              <tr><td><br></td></tr>
-      <tr>
-                <td></td>
-                <td><button type="submit" class="btn btn-success">Создать</button></td>
-                <td></td>
-      </tr>
-</table>
-              </form>
+                  <form action="{{route('storeFile')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field()}}
+                    <table border="0">
+                      <tr>
+                        <td colspan="2">Форма для загрузки Вашего файла<td>
+                      </tr>
+                     </tr>
+                     <tr><td><br></td></tr>
+                     <tr>
+                       <tr>
+                         <td>E-Mail</td>
+                         <td>
+                           <input type="text" class="" name="email" value="{{old('email')}}"><br>
+                         </td>
+                       </tr>
+                       <tr><td><br></td></tr>
+                       <tr>
+                         <td>Description</td>
+                         <td>
+                           <textarea name="description">{{old('description')}}</textarea><br>
+                         </td>
+                       </tr>
+                       <tr><td><br></td></tr>
+                       <tr>
+                         <td></td>
+                         <td><input type="file" name="file"></td>
+                       </tr>
+                       <tr><td><br></td></tr>
+                       <tr>
+                         <td></td>
+                         <td>
+                           <button type="submit" class="btn btn-success">Создать</button>
+                         </td>
+                         <td></td>
+                       </tr>
+                     </table>
+                  </form>
                 </div>
-
-
             </div>
         </div>
     </body>

@@ -12,16 +12,16 @@
     width: 200%;
     height: 80px;
     resize: none;
-}
-.m-b-md {
+  }
+  .m-b-md {
     margin-bottom: 30px;
     text-align: center;
-}
-.title {
+  }
+  .title {
     font-size: 26px;
     color: black;
     text-align: center;
-}
+  }
   </style>
 </head>
 <body>
@@ -42,13 +42,15 @@
         </tr>
       </table>
       <br>
-  <table>
-    <tr>
-      <td>Description:</td>
-      <td><textarea readonly>{{$file->description}}</textarea> </td>
-    </tr>
-  </table>
-</dev>
-</dev>
+      <table>
+        <tr>
+          <td>Description:</td>
+          <td>
+            <textarea readonly>{{$file->description}}</textarea>
+          </td>
+        </tr>
+      </table>
+    </dev>
+  </dev>
 </body>
 @endsection

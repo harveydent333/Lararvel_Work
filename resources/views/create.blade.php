@@ -7,23 +7,21 @@
                   <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                       <div class="alert alert-danger">
-                  <ul>
-                    @foreach($errors->all() as $error)
-                      <li>{{$error}} </li>
-                    @endforeach
-                  </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-      @endif
-
-      @if (session('message'))
+                        <ul>
+                          @foreach($errors->all() as $error)
+                            <li>{{$error}} </li>
+                          @endforeach
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    @endif
+    @if (session('message'))
       <div class="alert alert-success">
         {{session('message')}}
       </div>
-      @endif
-
+    @endif
       {!! Form::open(['route' =>['user.store']])!!}
       <div class="form-group">
         Name:
@@ -37,5 +35,5 @@
         <br>
         <button class="btn btn-success">Создать</button>
      </div>
-       {!! Form::close() !!}
+      {!! Form::close() !!}
 @endsection
