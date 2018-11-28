@@ -9,18 +9,19 @@
 3) APP_KEY=base64:dusqSTIMDKaHBvhkL1u34scJOAYip0p5fqkiVHi+LaI=
 4) APP_DEBUG=true
 5) APP_URL=http://localhost
-6) DB_CONNECTION=mysql
-7) DB_HOST=127.0.0.1
-8) DB_PORT=3306
-9) DB_DATABASE=testDB
-10) DB_USERNAME=test-user
-11) DB_PASSWORD=123
-12) MAIL_DRIVER=smtp
-13) MAIL_HOST=smtp.gmail.com
-14) MAIL_PORT=587
-15) MAIL_USERNAME=testlaravel3334@gmail.com
-16) MAIL_PASSWORD=123456789qq+
-17) MAIL_ENCRYPTION=tls
+6) APP_URL_ANGULAR=http://localhost:4200
+7) DB_CONNECTION=mysql
+8) DB_HOST=127.0.0.1
+9) DB_PORT=3306
+10) DB_DATABASE=testDB
+11) DB_USERNAME=test-user
+12) DB_PASSWORD=123
+13) MAIL_DRIVER=smtp
+14) MAIL_HOST=smtp.gmail.com
+15) MAIL_PORT=587
+16) MAIL_USERNAME=testlaravel3334@gmail.com
+17) MAIL_PASSWORD=123456789qq+
+18) MAIL_ENCRYPTION=tls
 
 !! Сохраняем файл как  .env
 
