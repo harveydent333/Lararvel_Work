@@ -66,38 +66,38 @@ class CreateUsersController extends Controller
     return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
   }
 
-  public function updateProfil(CreateTaskRequest $request, $id)
-  {
-    $myData = User::find($id);
-    $email_request = $request;
-    $email = User::all();
-    if($email_request->email == $myData->email){
-      $myData->fill([
-        'name' => ($request->name),
-        'password' => $request->password,
-        'remember_token'=>$request->password,
-        'id_roles'=>($request->id_roles),
-      ]);
-      $myData->save();
-      return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
-      else{
-        foreach ($email as $mail) {
-          if(($mail->email && $mail->id) != ($email_request->email && $email_request->id)){
-            return redirect()->back()->with(['message'=>'Данный email уже используется!']);
-          }
-          else{
-            $myData->fill([
-              'name' => ($request->name),
-              'email' => ($request->email),
-              'password' => $request->password,
-              'remember_token'=>$request->password,
-              'id_roles'=>($request->id_roles),
-            ]);
-            $myData->save();
-            return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
-          }
-        }
-      }
-    }
-  }
+//  public function updateProfil(CreateTaskRequest $request, $id)
+//  {
+//    $myData = User::find($id);
+//    $email_request = $request;
+//    $email = User::all();
+//    if($email_request->email == $myData->email){
+//      $myData->fill([
+//        'name' => ($request->name),
+//        'password' => $request->password,
+//        'remember_token'=>$request->password,
+//        'id_roles'=>($request->id_roles),
+//      ]);
+//      $myData->save();
+//      return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
+//      else{
+//        foreach ($email as $mail) {
+//          if(($mail->email && $mail->id) != ($email_request->email && $email_request->id)){
+//            return redirect()->back()->with(['message'=>'Данный email уже используется!']);
+//          }
+//          else{
+//            $myData->fill([
+//              'name' => $request->name,
+//              'email' => $request->email,
+//              'password' => $request->password,
+//              'remember_token'=>$request->password,
+//              'id_roles'=> $request->id_roles,
+//            ]);
+//            $myData->save();
+//            return redirect()->back()->with(['message'=>'Данные успешно изменены!']);
+//          }
+//        }
+//      }
+//    }
+//  }
 }

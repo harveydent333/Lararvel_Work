@@ -10,7 +10,8 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('{id}/edit',['uses'=>'MainController@edit'])->name('edit');
   Route::put('{id}/update',['uses'=>'MainController@update'])->name('update');
 });
-Route::get('/','MainController@index' )->name('welcome');
+
+Route::get('/','MainController@index' );
 Route::get('uploaded/{has_user}/{has_file}','MainController@upload')->name('upload');
 Route::post('storeFile','MainController@storeFile')->name('storeFile');
 Route::post('tests','MainController@tests');
